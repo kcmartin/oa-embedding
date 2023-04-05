@@ -1,12 +1,11 @@
 import openai
 import os
+import ast
 import numpy as np
 import pandas as pd
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 df = pd.read_csv('unicorns_with_embeddings.csv')
-# this line was suggested by a fellow student to fix the numpy error
-df['embedding'] = df.embedding.apply(eval).apply(np.array)
 
 def get_embedding(text):
   # Note how this function assumes you already set your Open AI key!
@@ -23,6 +22,8 @@ def vector_similarity(vec1,vec2):
     
     Because OpenAI Embeddings are normalized to length 1, the cosine similarity is the same as the dot product.
     """
+    # this line was suggested in the course forum to fix numpy error
+    vec1 =  ast.literal_eval(vec1)
     return np.dot(np.array(vec1), np.array(vec2))
 
 def embed_prompt_lookup():
