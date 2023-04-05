@@ -7,7 +7,7 @@ Notes:
 
 Got the following numpy error, due to the a problem with the data file. A fellow student suggested a fix using `ast`
 
-```  File "<__array_function__ internals>", line 200, in dot
-numpy.core._exceptions._UFuncNoLoopError: ufunc 'multiply' did not contain a loop with signature matching types (dtype('<U34391'), dtype('<U32')) -> None```
+`File "<__array_function__ internals>", line 200, in dot
+numpy.core._exceptions._UFuncNoLoopError: ufunc 'multiply' did not contain a loop with signature matching types (dtype('<U34391'), dtype('<U32')) -> None`
 
 
